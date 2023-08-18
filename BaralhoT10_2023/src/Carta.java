@@ -3,10 +3,10 @@ public class Carta {
     private Valor valor;
     private boolean aberto;
 
-    public Carta(Naipe naipe, Valor valor){
+    Carta(Naipe naipe,Valor valor){
         this.naipe = naipe;
         this.valor = valor;
-        this.aberto = false;
+        this.aberto = true;
     }
 
     public Naipe getNaipe() {
@@ -21,19 +21,19 @@ public class Carta {
         return aberto;
     }
 
-    public void viraCarta (){
+    public void viraCarta(){
         aberto = !aberto;
     }
 
-    public boolean maior (Carta c2){
-        if (valor.ordinal() > c2.getValor().ordinal()){
+    public boolean eMaior(Carta outra){
+        if (valor.ordinal() > outra.getValor().ordinal()){
             return true;
         }
         return false;
     }
 
-    public boolean igual (Carta c2){
-        if (valor.ordinal() == c2.getValor().ordinal()){
+    public boolean igual(Carta outra){
+        if (valor.ordinal() == outra.getValor().ordinal()){
             return true;
         }
         return false;
@@ -43,6 +43,4 @@ public class Carta {
     public String toString() {
         return "Carta [naipe=" + naipe + ", valor=" + valor + ", aberto=" + aberto + "]";
     }
-    
-    
 }
